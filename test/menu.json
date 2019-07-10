@@ -1,0 +1,44 @@
+[
+  {
+    "label": "素材库",
+    "value": "/admin/-1/person/chart-list",
+    "children": [
+      {
+        "label": "素材库-子类1",
+        "value": "/admin/-1/person/1/:id"
+      },
+      {
+        "label": "素材库-子2",
+        "value": "/admin/-1/person/2/:id"
+      }
+    ]
+  },
+  {
+    "label": "空间",
+    "value": "/admin/space",
+    "children": [
+      {
+        "label": "空间-子级1",
+        "value": "/admin/space/:id",
+        "children": [
+          {
+            "label": "空间设置",
+            "value": "/admin/space/:id/setting"
+          },
+          {
+            "label": "空间导出",
+            "value": "/admin/space/:id/export"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "数据",
+    "value": "/admin/operational-data-content/operational-data"
+  },
+  {
+    "label": "团队",
+    "value": "/admin/team/member-list"
+  }
+]
