@@ -2,7 +2,7 @@
  * name: next-tree
  * url: https://github.com/afeiship/next-tree
  * version: 1.0.0
- * date: 2019-07-10T16:05:15.847Z
+ * date: 2019-07-11T02:14:29.316Z
  * license: MIT
  */
 
@@ -33,6 +33,9 @@
           },
           options
         );
+      },
+      traverse: function(inCallback) {
+        nxTraverse(this.data, inCallback, this.options);
       },
       ancestors: function(inItem) {
         var results = [];

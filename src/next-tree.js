@@ -26,6 +26,9 @@
           options
         );
       },
+      traverse: function(inCallback) {
+        nxTraverse(this.data, inCallback, this.options);
+      },
       ancestors: function(inItem) {
         var results = [];
         var parent = inItem.__parent__();
