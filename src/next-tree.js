@@ -1,7 +1,8 @@
 (function() {
   var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('next-js-core2');
-  var nxTraverse = nx.traverse || require('next-traverse');
+  var nx = global.nx || require('@feizheng/next-js-core2');
+
+  var nxTraverse = nx.traverse || require('@feizheng/next-traverse');
   var DEFAULT_OPTIONS = { itemsKey: 'children' };
 
   var NxTree = nx.declare('nx.Tree', {

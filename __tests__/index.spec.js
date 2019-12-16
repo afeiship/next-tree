@@ -1,5 +1,5 @@
 (function() {
-  var nx = require('next-js-core2');
+  var nx = require('@feizheng/next-js-core2');
   var NxTree = require('../src/next-tree');
 
   describe('NxTree.methods', function() {
@@ -51,3 +51,6 @@
     });
   });
 })();
+
+
+

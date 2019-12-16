@@ -1,9 +1,9 @@
 # next-tree
-> Tree data for next
+> Tree data for next.
 
 ## installation
 ```bash
-npm install -S afeiship/next-tree --registry=https://registry.npm.taobao.org
+npm install -S @feizheng/next-tree
 ```
 
 ## apis
@@ -16,7 +16,7 @@ npm install -S afeiship/next-tree --registry=https://registry.npm.taobao.org
 
 ## usage
 ```js
-import NxTree from 'next-tree';
+import NxTree from '@feizheng/next-tree';
 
 // code goes here:
 ```

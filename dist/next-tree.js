@@ -1,15 +1,16 @@
 /*!
- * name: next-tree
+ * name: @feizheng/next-tree
  * url: https://github.com/afeiship/next-tree
  * version: 1.0.0
- * date: 2019-07-11T02:14:29.316Z
+ * date: 2019-12-16T12:22:15.367Z
  * license: MIT
  */
 
 (function() {
   var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('next-js-core2');
-  var nxTraverse = nx.traverse || require('next-traverse');
+  var nx = global.nx || require('@feizheng/next-js-core2');
+
+  var nxTraverse = nx.traverse || require('@feizheng/next-traverse');
   var DEFAULT_OPTIONS = { itemsKey: 'children' };
 
   var NxTree = nx.declare('nx.Tree', {

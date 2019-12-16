@@ -40,5 +40,9 @@
   {
     "label": "团队",
     "value": "/admin/team/member-list"
+  },
+  {
+    "label": "团体",
+    "value": "/admin/team/member-list"
   }
 ]

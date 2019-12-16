@@ -1,6 +1,6 @@
 {
   "name": "next-tree",
-  "description": "Tree data for next",
+  "description": "Tree data for next.",
   "main": "dist/next-tree.js",
   "authors": [
     "afei"
