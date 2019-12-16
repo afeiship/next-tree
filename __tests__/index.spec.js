@@ -49,8 +49,21 @@
       var labels = descendants.map((item) => item.label);
       expect(labels).toEqual(['空间-子级1', '空间']);
     });
+
+    test('method - find', function() {
+      var nxTree = new NxTree(menus);
+      var res = nxTree.find((index, item) => {
+        return item.value === '/admin/-1/person/1/:id';
+      });
+      expect(res.label).toBe('素材库-子类1');
+    });
+
+    test('method - filter', function() {
+      var nxTree = new NxTree(menus);
+      var res = nxTree.filter((index, item) => item.label.includes('素材库'));
+      var labels = res.map((item) => item.label);
+      expect(res.length).toBe(3);
+      expect(labels).toEqual(['素材库', '素材库-子类1', '素材库-子2']);
+    });
   });
 })();
-
-
-

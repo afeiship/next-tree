@@ -1,8 +1,8 @@
 /*!
  * name: @feizheng/next-tree
  * url: https://github.com/afeiship/next-tree
- * version: 1.0.0
- * date: 2019-12-16T12:22:15.367Z
+ * version: 1.0.1
+ * date: 2019-12-16T13:02:36.654Z
  * license: MIT
  */
 
@@ -37,6 +37,33 @@
       },
       traverse: function(inCallback) {
         nxTraverse(this.data, inCallback, this.options);
+      },
+      find: function(inCallback) {
+        var result = null;
+        nxTraverse(
+          this.data,
+          function(index, item, parent) {
+            if (inCallback(index, item, parent)) {
+              result = item;
+              return nx.BREAKER;
+            }
+          },
+          this.options
+        );
+        return result;
+      },
+      filter: function(inCallback) {
+        var result = [];
+        nxTraverse(
+          this.data,
+          function(index, item, parent) {
+            if (inCallback(index, item, parent)) {
+              result.push(item);
+            }
+          },
+          this.options
+        );
+        return result;
       },
       ancestors: function(inItem) {
         var results = [];
