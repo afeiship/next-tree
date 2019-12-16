@@ -60,32 +60,36 @@
       ancestors: function(inCallback) {
         var results = [];
         var current = this.find(inCallback);
-        var parent = current.__parent__();
-        while (parent) {
-          results.push(parent);
-          parent = parent.__parent__();
+        if (current) {
+          var parent = current.__parent__();
+          while (parent) {
+            results.push(parent);
+            parent = parent.__parent__();
+          }
         }
         return results;
       },
       descendants: function(inCallback) {
         var current = this.find(inCallback);
         var results = [];
-        nxTraverse(
-          current,
-          function(_, item) {
-            results = results.concat(item.__children__());
-          },
-          this.options
-        );
+        if (current) {
+          nxTraverse(
+            current,
+            function(_, item) {
+              results = results.concat(item.__children__());
+            },
+            this.options
+          );
+        }
         return results;
       },
       parent: function(inCallback) {
         var current = this.find(inCallback);
-        return current.__parent__();
+        return current && current.__parent__();
       },
       children: function(inCallback) {
         var current = this.find(inCallback);
-        return current.__children__();
+        return current && current.__children__();
       }
     }
   });
