@@ -81,7 +81,7 @@
         );
         return result;
       },
-      ancestors: function(inCallback, inOptions) {
+      ancestors: function(inCallback) {
         var results = [];
         var current = this.find(inCallback);
         if (current) {

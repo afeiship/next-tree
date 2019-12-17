@@ -2,7 +2,7 @@
  * name: @feizheng/next-tree
  * url: https://github.com/afeiship/next-tree
  * version: 1.0.6
- * date: 2019-12-17T04:32:02.959Z
+ * date: 2019-12-17T04:40:20.498Z
  * license: MIT
  */
 
@@ -89,7 +89,7 @@
         );
         return result;
       },
-      ancestors: function(inCallback, inOptions) {
+      ancestors: function(inCallback) {
         var results = [];
         var current = this.find(inCallback);
         if (current) {
