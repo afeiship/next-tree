@@ -6,6 +6,13 @@
   var DEFAULT_OPTIONS = { itemsKey: 'children' };
 
   var NxTree = nx.declare('nx.Tree', {
+    statics: {
+      serialize: function(inData) {
+        return JSON.parse(
+          JSON.stringify(inData)
+        );
+      }
+    },
     methods: {
       init: function(inData, inOptions) {
         this.data = inData;
@@ -74,7 +81,7 @@
         );
         return result;
       },
-      ancestors: function(inCallback) {
+      ancestors: function(inCallback, inOptions) {
         var results = [];
         var current = this.find(inCallback);
         if (current) {

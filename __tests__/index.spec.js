@@ -61,7 +61,7 @@
       expect(labels).toEqual(['素材库', '素材库-子类1', '素材库-子2']);
     });
 
-    test('method - search: level1/n', function() {
+    test('method - search/serialize: level1/n', function() {
       var nxTree = new NxTree(menus);
       var res1 = nxTree.search((index, item) => item.label === '数据');
       var res2 = nxTree.search((index, item) => item.label === '团队');
@@ -71,7 +71,7 @@
       expect(res1[0].value).toBe('/admin/operational-data-content/operational-data');
       expect(res2[0].value).toBe('/admin/team/member-list');
       expect(res3[0].value).toBe('/admin/team/team');
-      expect(JSON.parse(JSON.stringify(res4))).toEqual([
+      expect(NxTree.serialize(res4)).toEqual([
         {
           label: '空间',
           value: '/admin/space',
