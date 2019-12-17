@@ -43,6 +43,6 @@
   },
   {
     "label": "团体",
-    "value": "/admin/team/member-list"
+    "value": "/admin/team/team"
   }
 ]

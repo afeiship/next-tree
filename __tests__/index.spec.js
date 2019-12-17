@@ -60,5 +60,41 @@
       expect(res.length).toBe(3);
       expect(labels).toEqual(['素材库', '素材库-子类1', '素材库-子2']);
     });
+
+    test('method - search: level1/n', function() {
+      var nxTree = new NxTree(menus);
+      var res1 = nxTree.search((index, item) => item.label === '数据');
+      var res2 = nxTree.search((index, item) => item.label === '团队');
+      var res3 = nxTree.search((index, item) => item.label === '团体');
+      var res4 = nxTree.search((index, item) => item.label === '空间导出');
+
+      expect(res1[0].value).toBe('/admin/operational-data-content/operational-data');
+      expect(res2[0].value).toBe('/admin/team/member-list');
+      expect(res3[0].value).toBe('/admin/team/team');
+      expect(JSON.parse(JSON.stringify(res4))).toEqual([
+        {
+          label: '空间',
+          value: '/admin/space',
+          children: [
+            {
+              label: '空间-子级1',
+              value: '/admin/space/:id',
+              children: [
+                {
+                  label: '空间导出',
+                  value: '/admin/space/:id/export',
+                  deepth: 2,
+                  independent: true
+                }
+              ],
+              deepth: 1,
+              independent: false
+            }
+          ],
+          deepth: 0,
+          independent: false
+        }
+      ]);
+    });
   });
 })();

@@ -32,6 +32,7 @@
     "yargs": "^4.7.1"
   },
   "dependencies": {
+    "@feizheng/next-deep-clone": "^1.0.1",
     "@feizheng/next-js-core2": "^2.0.2",
     "@feizheng/next-traverse": "^1.0.0"
   },

@@ -1,7 +1,7 @@
 (function() {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@feizheng/next-js-core2');
-
+  var nxDeepClone = nx.deepClone || require('@feizheng/next-deep-clone');
   var nxTraverse = nx.traverse || require('@feizheng/next-traverse');
   var DEFAULT_OPTIONS = { itemsKey: 'children' };
 
@@ -43,6 +43,23 @@
           this.options
         );
         return result;
+      },
+      search: function(inCallback) {
+        var options = this.options;
+        var data = nxDeepClone(this.data);
+        var filter = function(list, callback) {
+          return list.filter(function(item, index) {
+            var children = item[options.itemsKey];
+            if (children && children.length) {
+              children = item[options.itemsKey] = filter(children, callback);
+              if (children.length) {
+                return true;
+              }
+            }
+            return callback(index, item);
+          });
+        };
+        return filter(data, inCallback);
       },
       filter: function(inCallback) {
         var result = [];

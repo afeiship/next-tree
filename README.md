@@ -7,12 +7,15 @@ npm install -S @feizheng/next-tree
 ```
 
 ## apis
-| api         | params | description                 |
-| ----------- | ------ | --------------------------- |
-| children    | item   | Find children only on level |
-| parent      | item   | Find parent only one level  |
-| descendants | item   | Find descendants recursion  |
-| ancestors   | item   | Find ancestors recursion    |
+| api         | params   | description                 |
+| ----------- | -------- | --------------------------- |
+| children    | callback | Find children only on level |
+| parent      | callback | Find parent only one level  |
+| descendants | callback | Find descendants recursion  |
+| ancestors   | callback | Find ancestors recursion    |
+| find        | callback | -                           |
+| filter      | callback | -                           |
+| search      | callback | -                           |
 
 ## usage
 ```js
