@@ -1,8 +1,8 @@
 /*!
  * name: @feizheng/next-tree
  * url: https://github.com/afeiship/next-tree
- * version: 1.0.6
- * date: 2019-12-17T04:40:20.498Z
+ * version: 1.0.7
+ * date: 2019-12-17T05:17:53.099Z
  * license: MIT
  */
 
@@ -11,20 +11,18 @@
   var nx = global.nx || require('@feizheng/next-js-core2');
   var nxDeepClone = nx.deepClone || require('@feizheng/next-deep-clone');
   var nxTraverse = nx.traverse || require('@feizheng/next-traverse');
-  var DEFAULT_OPTIONS = { itemsKey: 'children' };
+  var DEFAULT_OPTIONS = { itemsKey: 'children', clone: true };
 
   var NxTree = nx.declare('nx.Tree', {
     statics: {
       serialize: function(inData) {
-        return JSON.parse(
-          JSON.stringify(inData)
-        );
+        return JSON.parse(JSON.stringify(inData));
       }
     },
     methods: {
       init: function(inData, inOptions) {
-        this.data = inData;
         this.options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
+        this.data = this.options.clone ? nxDeepClone(inData) : inData;
         this.attach();
       },
       attach: function() {
