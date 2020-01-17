@@ -1,8 +1,8 @@
 /*!
  * name: @feizheng/next-tree
  * url: https://github.com/afeiship/next-tree
- * version: 1.1.0
- * date: 2020-01-17T04:36:48.832Z
+ * version: 1.2.0
+ * date: 2020-01-17T05:27:10.720Z
  * license: MIT
  */
 
@@ -35,13 +35,13 @@
             if (Array.isArray(item)) {
               x = x + item.length - 1;
             } else {
-              if (item.deepth > max) {
-                max = item.deepth;
+              if (item.depth > max) {
+                max = item.depth;
               }
             }
           }
         });
-        this.meta = { deepth: max, x: x + 1, y: max + 1 };
+        this.meta = { depth: max, x: x + 1, y: max + 1 };
       },
       attach: function() {
         var options = this.options;

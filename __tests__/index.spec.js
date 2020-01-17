@@ -85,27 +85,27 @@
                 {
                   label: '空间导出',
                   value: '/admin/space/:id/export',
-                  deepth: 2,
+                  depth: 2,
                   independent: true
                 }
               ],
-              deepth: 1,
+              depth: 1,
               independent: false
             }
           ],
-          deepth: 0,
+          depth: 0,
           independent: false
         }
       ]);
     });
 
-    test('method column deepth/rowspan/colspan', () => {
+    test('method column depth/rowspan/colspan', () => {
       var nxTree1 = new NxTree(columns);
       var nxTree2 = new NxTree(columns[0]);
       var nxTree3 = new NxTree(columns[1]);
-      expect(nxTree1.meta).toEqual({ deepth: 4, x: 8, y: 5 });
-      expect(nxTree2.meta).toEqual({ deepth: 0, x: 1, y: 1 });
-      expect(nxTree3.meta).toEqual({ deepth: 4, x: 7, y: 5 });
+      expect(nxTree1.meta).toEqual({ depth: 4, x: 8, y: 5 });
+      expect(nxTree2.meta).toEqual({ depth: 0, x: 1, y: 1 });
+      expect(nxTree3.meta).toEqual({ depth: 4, x: 7, y: 5 });
     });
   });
 })();

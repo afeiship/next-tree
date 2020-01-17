@@ -27,13 +27,13 @@
             if (Array.isArray(item)) {
               x = x + item.length - 1;
             } else {
-              if (item.deepth > max) {
-                max = item.deepth;
+              if (item.depth > max) {
+                max = item.depth;
               }
             }
           }
         });
-        this.meta = { deepth: max, x: x + 1, y: max + 1 };
+        this.meta = { depth: max, x: x + 1, y: max + 1 };
       },
       attach: function() {
         var options = this.options;
