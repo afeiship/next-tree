@@ -4,8 +4,10 @@
 
   describe('NxTree.methods', function() {
     var menus = [];
+    var columns = [];
     beforeEach(() => {
       menus = require('./menu.json');
+      columns = require('./columns.json');
     });
 
     test('method - children --- level1', function() {
@@ -95,6 +97,15 @@
           independent: false
         }
       ]);
+    });
+
+    test('method column deepth/rowspan/colspan', () => {
+      var nxTree1 = new NxTree(columns);
+      var nxTree2 = new NxTree(columns[0]);
+      var nxTree3 = new NxTree(columns[1]);
+      expect(nxTree1.meta).toEqual({ deepth: 4, x: 8, y: 5 });
+      expect(nxTree2.meta).toEqual({ deepth: 0, x: 1, y: 1 });
+      expect(nxTree3.meta).toEqual({ deepth: 4, x: 7, y: 5 });
     });
   });
 })();

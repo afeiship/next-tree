@@ -3,6 +3,7 @@
   var nx = global.nx || require('@feizheng/next-js-core2');
   var nxDeepClone = nx.deepClone || require('@feizheng/next-deep-clone');
   var nxTraverse = nx.traverse || require('@feizheng/next-traverse');
+  var nxDeepEach = nx.deepEach || require('@feizheng/next-deep-each');
   var DEFAULT_OPTIONS = { itemsKey: 'children', clone: true };
 
   var NxTree = nx.declare('nx.Tree', {
@@ -16,6 +17,23 @@
         this.options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
         this.data = this.options.clone ? nxDeepClone(inData) : inData;
         this.attach();
+        this.meta();
+      },
+      meta: function() {
+        var max = 0;
+        var x = 0;
+        nxDeepEach(this.data, function(_, item) {
+          if (typeof item === 'object') {
+            if (Array.isArray(item)) {
+              x = x + item.length - 1;
+            } else {
+              if (item.deepth > max) {
+                max = item.deepth;
+              }
+            }
+          }
+        });
+        this.meta = { deepth: max, x: x + 1, y: max + 1 };
       },
       attach: function() {
         var options = this.options;

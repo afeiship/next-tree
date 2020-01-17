@@ -1,8 +1,8 @@
 /*!
  * name: @feizheng/next-tree
  * url: https://github.com/afeiship/next-tree
- * version: 1.0.7
- * date: 2019-12-17T05:17:53.099Z
+ * version: 1.1.0
+ * date: 2020-01-17T04:36:48.832Z
  * license: MIT
  */
 
@@ -11,6 +11,7 @@
   var nx = global.nx || require('@feizheng/next-js-core2');
   var nxDeepClone = nx.deepClone || require('@feizheng/next-deep-clone');
   var nxTraverse = nx.traverse || require('@feizheng/next-traverse');
+  var nxDeepEach = nx.deepEach || require('@feizheng/next-deep-each');
   var DEFAULT_OPTIONS = { itemsKey: 'children', clone: true };
 
   var NxTree = nx.declare('nx.Tree', {
@@ -24,6 +25,23 @@
         this.options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
         this.data = this.options.clone ? nxDeepClone(inData) : inData;
         this.attach();
+        this.meta();
+      },
+      meta: function() {
+        var max = 0;
+        var x = 0;
+        nxDeepEach(this.data, function(_, item) {
+          if (typeof item === 'object') {
+            if (Array.isArray(item)) {
+              x = x + item.length - 1;
+            } else {
+              if (item.deepth > max) {
+                max = item.deepth;
+              }
+            }
+          }
+        });
+        this.meta = { deepth: max, x: x + 1, y: max + 1 };
       },
       attach: function() {
         var options = this.options;
