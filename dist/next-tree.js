@@ -2,7 +2,7 @@
  * name: @feizheng/next-tree
  * url: https://github.com/afeiship/next-tree
  * version: 1.2.0
- * date: 2020-01-17T05:27:10.720Z
+ * date: 2020-01-17T05:30:20.298Z
  * license: MIT
  */
 
