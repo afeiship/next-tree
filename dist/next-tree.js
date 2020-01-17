@@ -1,8 +1,8 @@
 /*!
  * name: @feizheng/next-tree
  * url: https://github.com/afeiship/next-tree
- * version: 1.2.0
- * date: 2020-01-17T05:30:20.298Z
+ * version: 1.2.1
+ * date: 2020-01-17T08:46:16.368Z
  * license: MIT
  */
 
@@ -32,7 +32,7 @@
         var x = 0;
         nxDeepEach(this.data, function(_, item) {
           if (typeof item === 'object') {
-            if (Array.isArray(item)) {
+            if (Array.isArray(item) && item.length) {
               x = x + item.length - 1;
             } else {
               if (item.depth > max) {

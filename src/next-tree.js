@@ -24,7 +24,7 @@
         var x = 0;
         nxDeepEach(this.data, function(_, item) {
           if (typeof item === 'object') {
-            if (Array.isArray(item)) {
+            if (Array.isArray(item) && item.length) {
               x = x + item.length - 1;
             } else {
               if (item.depth > max) {
