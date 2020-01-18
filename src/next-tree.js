@@ -38,7 +38,7 @@
         var self = this;
         var groups = { length: this.meta.depth + 1 };
 
-        nx.deepEach(this.data, function(key, value) {
+        nxDeepEach(this.data, function(key, value) {
           if (value && typeof value === 'object') {
             if (typeof value.depth === 'number') {
               groups[value.depth] = groups[value.depth] || [];

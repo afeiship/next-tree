@@ -1,8 +1,8 @@
 /*!
  * name: @feizheng/next-tree
  * url: https://github.com/afeiship/next-tree
- * version: 1.3.0
- * date: 2020-01-18T14:03:42.063Z
+ * version: 1.3.1
+ * date: 2020-01-18T14:21:43.042Z
  * license: MIT
  */
 
@@ -46,7 +46,7 @@
         var self = this;
         var groups = { length: this.meta.depth + 1 };
 
-        nx.deepEach(this.data, function(key, value) {
+        nxDeepEach(this.data, function(key, value) {
           if (value && typeof value === 'object') {
             if (typeof value.depth === 'number') {
               groups[value.depth] = groups[value.depth] || [];
