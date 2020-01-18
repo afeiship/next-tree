@@ -1,8 +1,8 @@
 /*!
  * name: @feizheng/next-tree
  * url: https://github.com/afeiship/next-tree
- * version: 1.3.1
- * date: 2020-01-18T14:21:43.042Z
+ * version: 1.3.2
+ * date: 2020-01-18T14:51:34.262Z
  * license: MIT
  */
 
@@ -61,7 +61,7 @@
           nx.forEach(row, function(cell) {
             var current = new NxTree(cell);
             cell.colSpan = current.meta.x;
-            cell.rowSpan = cell.independent ? self.meta.y - depth : 0;
+            cell.rowSpan = cell.independent ? 0 : self.meta.y - depth;
           });
         });
 

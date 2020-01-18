@@ -53,7 +53,7 @@
           nx.forEach(row, function(cell) {
             var current = new NxTree(cell);
             cell.colSpan = current.meta.x;
-            cell.rowSpan = cell.independent ? self.meta.y - depth : 0;
+            cell.rowSpan = cell.independent ? 0 : self.meta.y - depth;
           });
         });
 
