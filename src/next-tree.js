@@ -24,16 +24,15 @@
         var x = 0;
         nxDeepEach(this.data, function(_, item) {
           if (typeof item === 'object') {
-            if (Array.isArray(item) && item.length) {
-              x = x + item.length - 1;
-            } else {
-              if (item.depth > max) {
+            if (!Array.isArray(item)) {
+              if (item.depth >= max) {
                 max = item.depth;
               }
             }
+            item.independent && x++;
           }
         });
-        this.meta = { depth: max, x: x + 1, y: max + 1 };
+        this.meta = { depth: max, x: x, y: max && max + 1 };
       },
       attach: function() {
         var options = this.options;

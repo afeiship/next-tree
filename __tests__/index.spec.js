@@ -2,6 +2,8 @@
   var nx = require('@feizheng/next-js-core2');
   var NxTree = require('../src/next-tree');
 
+  require('@feizheng/next-deep-each');
+
   describe('NxTree.methods', function() {
     var menus = [];
     var columns = [];
@@ -99,13 +101,28 @@
       ]);
     });
 
-    test('method column depth/rowspan/colspan', () => {
+    test.only('method column depth/rowspan/colspan', () => {
       var nxTree1 = new NxTree(columns);
-      var nxTree2 = new NxTree(columns[0]);
-      var nxTree3 = new NxTree(columns[1]);
-      expect(nxTree1.meta).toEqual({ depth: 4, x: 8, y: 5 });
-      expect(nxTree2.meta).toEqual({ depth: 0, x: 1, y: 1 });
-      expect(nxTree3.meta).toEqual({ depth: 4, x: 7, y: 5 });
+      var data = nxTree1.data;
+      var groups = {
+        length: nxTree1.meta.depth + 1
+      };
+
+      // build table data:
+      nx.deepEach(data, (key, value) => {
+        if (value && typeof value === 'object') {
+          if (typeof value.depth === 'number') {
+            groups[value.depth] = groups[value.depth] || [];
+            groups[value.depth].push(value);
+            console.log(value.depth);
+            // console.log(value.title, nxTree1.meta, new NxTree(value).meta);
+          }
+        }
+      });
+
+      // console.log(nx.slice(groups));
+
+      expect(nxTree1.meta).toEqual({ depth: 4, x: 11, y: 5 });
     });
   });
 })();

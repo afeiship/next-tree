@@ -14,6 +14,7 @@
   "main": "dist/next-tree.js",
   "license": "MIT",
   "devDependencies": {
+    "@feizheng/next-deep-each": "^1.0.1",
     "@feizheng/next-nice-comments": "^1.0.0",
     "@feizheng/rake-git": "^1.2.0",
     "del": "^2.2.1",
@@ -33,7 +34,6 @@
   },
   "dependencies": {
     "@feizheng/next-deep-clone": "^1.0.1",
-    "@feizheng/next-deep-each": "^1.0.1",
     "@feizheng/next-js-core2": "^2.0.2",
     "@feizheng/next-traverse": "^2.0.0"
   },
