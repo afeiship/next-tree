@@ -1,0 +1,454 @@
+[
+  [
+    {
+      "title": "Name",
+      "dataIndex": "name",
+      "key": "name",
+      "width": 100,
+      "depth": 0,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 5
+    },
+    {
+      "title": "Other",
+      "children": [
+        {
+          "title": "Age",
+          "dataIndex": "age",
+          "key": "age",
+          "width": 150,
+          "depth": 1,
+          "independent": true,
+          "colSpan": 0,
+          "rowSpan": 4
+        },
+        {
+          "title": "Address",
+          "children": [
+            {
+              "title": "Street",
+              "dataIndex": "street",
+              "key": "street",
+              "width": 150,
+              "depth": 2,
+              "independent": true,
+              "colSpan": 0,
+              "rowSpan": 3
+            },
+            {
+              "title": "Block",
+              "children": [
+                {
+                  "title": "Building",
+                  "dataIndex": "building",
+                  "key": "building",
+                  "width": 100,
+                  "children": [
+                    {
+                      "title": "leftBuilding",
+                      "depth": 4,
+                      "independent": true,
+                      "colSpan": 0,
+                      "rowSpan": 1
+                    },
+                    {
+                      "title": "middleBuilding",
+                      "depth": 4,
+                      "independent": true,
+                      "colSpan": 0,
+                      "rowSpan": 1
+                    },
+                    {
+                      "title": "rightBuilding",
+                      "depth": 4,
+                      "independent": true,
+                      "colSpan": 0,
+                      "rowSpan": 1
+                    }
+                  ],
+                  "depth": 3,
+                  "independent": false,
+                  "colSpan": 3,
+                  "rowSpan": 0
+                },
+                {
+                  "title": "Door No.",
+                  "dataIndex": "number",
+                  "key": "number",
+                  "width": 100,
+                  "children": [
+                    {
+                      "title": "leftDoor",
+                      "depth": 4,
+                      "independent": true,
+                      "colSpan": 0,
+                      "rowSpan": 1
+                    },
+                    {
+                      "title": "rightDoor",
+                      "depth": 4,
+                      "independent": true,
+                      "colSpan": 0,
+                      "rowSpan": 1
+                    }
+                  ],
+                  "depth": 3,
+                  "independent": false,
+                  "colSpan": 2,
+                  "rowSpan": 0
+                }
+              ],
+              "depth": 2,
+              "independent": false,
+              "colSpan": 5,
+              "rowSpan": 0
+            }
+          ],
+          "depth": 1,
+          "independent": false,
+          "colSpan": 6,
+          "rowSpan": 0
+        }
+      ],
+      "depth": 0,
+      "independent": false,
+      "colSpan": 7,
+      "rowSpan": 0
+    },
+    {
+      "title": "Company",
+      "children": [
+        {
+          "title": "Company Address",
+          "dataIndex": "companyAddress",
+          "key": "companyAddress",
+          "width": 200,
+          "depth": 1,
+          "independent": true,
+          "colSpan": 0,
+          "rowSpan": 4
+        },
+        {
+          "title": "Company Name",
+          "dataIndex": "companyName",
+          "key": "companyName",
+          "depth": 1,
+          "independent": true,
+          "colSpan": 0,
+          "rowSpan": 4
+        }
+      ],
+      "depth": 0,
+      "independent": false,
+      "colSpan": 2,
+      "rowSpan": 0
+    },
+    {
+      "title": "Gender",
+      "dataIndex": "gender",
+      "key": "gender",
+      "width": 80,
+      "depth": 0,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 5
+    }
+  ],
+  [
+    {
+      "title": "Age",
+      "dataIndex": "age",
+      "key": "age",
+      "width": 150,
+      "depth": 1,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 4
+    },
+    {
+      "title": "Address",
+      "children": [
+        {
+          "title": "Street",
+          "dataIndex": "street",
+          "key": "street",
+          "width": 150,
+          "depth": 2,
+          "independent": true,
+          "colSpan": 0,
+          "rowSpan": 3
+        },
+        {
+          "title": "Block",
+          "children": [
+            {
+              "title": "Building",
+              "dataIndex": "building",
+              "key": "building",
+              "width": 100,
+              "children": [
+                {
+                  "title": "leftBuilding",
+                  "depth": 4,
+                  "independent": true,
+                  "colSpan": 0,
+                  "rowSpan": 1
+                },
+                {
+                  "title": "middleBuilding",
+                  "depth": 4,
+                  "independent": true,
+                  "colSpan": 0,
+                  "rowSpan": 1
+                },
+                {
+                  "title": "rightBuilding",
+                  "depth": 4,
+                  "independent": true,
+                  "colSpan": 0,
+                  "rowSpan": 1
+                }
+              ],
+              "depth": 3,
+              "independent": false,
+              "colSpan": 3,
+              "rowSpan": 0
+            },
+            {
+              "title": "Door No.",
+              "dataIndex": "number",
+              "key": "number",
+              "width": 100,
+              "children": [
+                {
+                  "title": "leftDoor",
+                  "depth": 4,
+                  "independent": true,
+                  "colSpan": 0,
+                  "rowSpan": 1
+                },
+                {
+                  "title": "rightDoor",
+                  "depth": 4,
+                  "independent": true,
+                  "colSpan": 0,
+                  "rowSpan": 1
+                }
+              ],
+              "depth": 3,
+              "independent": false,
+              "colSpan": 2,
+              "rowSpan": 0
+            }
+          ],
+          "depth": 2,
+          "independent": false,
+          "colSpan": 5,
+          "rowSpan": 0
+        }
+      ],
+      "depth": 1,
+      "independent": false,
+      "colSpan": 6,
+      "rowSpan": 0
+    },
+    {
+      "title": "Company Address",
+      "dataIndex": "companyAddress",
+      "key": "companyAddress",
+      "width": 200,
+      "depth": 1,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 4
+    },
+    {
+      "title": "Company Name",
+      "dataIndex": "companyName",
+      "key": "companyName",
+      "depth": 1,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 4
+    }
+  ],
+  [
+    {
+      "title": "Street",
+      "dataIndex": "street",
+      "key": "street",
+      "width": 150,
+      "depth": 2,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 3
+    },
+    {
+      "title": "Block",
+      "children": [
+        {
+          "title": "Building",
+          "dataIndex": "building",
+          "key": "building",
+          "width": 100,
+          "children": [
+            {
+              "title": "leftBuilding",
+              "depth": 4,
+              "independent": true,
+              "colSpan": 0,
+              "rowSpan": 1
+            },
+            {
+              "title": "middleBuilding",
+              "depth": 4,
+              "independent": true,
+              "colSpan": 0,
+              "rowSpan": 1
+            },
+            {
+              "title": "rightBuilding",
+              "depth": 4,
+              "independent": true,
+              "colSpan": 0,
+              "rowSpan": 1
+            }
+          ],
+          "depth": 3,
+          "independent": false,
+          "colSpan": 3,
+          "rowSpan": 0
+        },
+        {
+          "title": "Door No.",
+          "dataIndex": "number",
+          "key": "number",
+          "width": 100,
+          "children": [
+            {
+              "title": "leftDoor",
+              "depth": 4,
+              "independent": true,
+              "colSpan": 0,
+              "rowSpan": 1
+            },
+            {
+              "title": "rightDoor",
+              "depth": 4,
+              "independent": true,
+              "colSpan": 0,
+              "rowSpan": 1
+            }
+          ],
+          "depth": 3,
+          "independent": false,
+          "colSpan": 2,
+          "rowSpan": 0
+        }
+      ],
+      "depth": 2,
+      "independent": false,
+      "colSpan": 5,
+      "rowSpan": 0
+    }
+  ],
+  [
+    {
+      "title": "Building",
+      "dataIndex": "building",
+      "key": "building",
+      "width": 100,
+      "children": [
+        {
+          "title": "leftBuilding",
+          "depth": 4,
+          "independent": true,
+          "colSpan": 0,
+          "rowSpan": 1
+        },
+        {
+          "title": "middleBuilding",
+          "depth": 4,
+          "independent": true,
+          "colSpan": 0,
+          "rowSpan": 1
+        },
+        {
+          "title": "rightBuilding",
+          "depth": 4,
+          "independent": true,
+          "colSpan": 0,
+          "rowSpan": 1
+        }
+      ],
+      "depth": 3,
+      "independent": false,
+      "colSpan": 3,
+      "rowSpan": 0
+    },
+    {
+      "title": "Door No.",
+      "dataIndex": "number",
+      "key": "number",
+      "width": 100,
+      "children": [
+        {
+          "title": "leftDoor",
+          "depth": 4,
+          "independent": true,
+          "colSpan": 0,
+          "rowSpan": 1
+        },
+        {
+          "title": "rightDoor",
+          "depth": 4,
+          "independent": true,
+          "colSpan": 0,
+          "rowSpan": 1
+        }
+      ],
+      "depth": 3,
+      "independent": false,
+      "colSpan": 2,
+      "rowSpan": 0
+    }
+  ],
+  [
+    {
+      "title": "leftBuilding",
+      "depth": 4,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 1
+    },
+    {
+      "title": "middleBuilding",
+      "depth": 4,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 1
+    },
+    {
+      "title": "rightBuilding",
+      "depth": 4,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 1
+    },
+    {
+      "title": "leftDoor",
+      "depth": 4,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 1
+    },
+    {
+      "title": "rightDoor",
+      "depth": 4,
+      "independent": true,
+      "colSpan": 0,
+      "rowSpan": 1
+    }
+  ]
+]

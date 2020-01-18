@@ -34,6 +34,31 @@
         });
         this.meta = { depth: max, x: x, y: max && max + 1 };
       },
+      table: function() {
+        var self = this;
+        var groups = { length: this.meta.depth + 1 };
+
+        nx.deepEach(this.data, function(key, value) {
+          if (value && typeof value === 'object') {
+            if (typeof value.depth === 'number') {
+              groups[value.depth] = groups[value.depth] || [];
+              groups[value.depth].push(value);
+            }
+          }
+        });
+
+        groups = nx.slice(groups);
+
+        nx.forEach(groups, function(row, depth) {
+          nx.forEach(row, function(cell) {
+            var current = new NxTree(cell);
+            cell.colSpan = current.meta.x;
+            cell.rowSpan = cell.independent ? self.meta.y - depth : 0;
+          });
+        });
+
+        return groups;
+      },
       attach: function() {
         var options = this.options;
         nxTraverse(
