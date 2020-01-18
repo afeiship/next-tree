@@ -16,6 +16,7 @@ npm install -S @feizheng/next-tree
 | find        | callback | -                           |
 | filter      | callback | -                           |
 | search      | callback | -                           |
+| table       | callback | Create table data           |
 
 ## usage
 ```js
