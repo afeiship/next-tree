@@ -7,12 +7,14 @@ __tests__
 src
 build
 gulpfile.js
-.vscode
 
-
-jest.config.js
 .editorconfig
-Rakefile
 .prettierrc
 Gemfile
-bower.json
+jest.config.js
+LICENSE.txt
+Rakefile
+.vscode
+
+# vscode localhistory
+.history

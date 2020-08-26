@@ -1,96 +1,58 @@
 /*!
  * name: @feizheng/next-tree
- * url: https://github.com/afeiship/next-tree
- * version: 1.3.4
- * date: 2020-01-19T02:46:18.367Z
+ * description: Tree data for next.
+ * homepage: https://github.com/afeiship/next-tree
+ * version: 1.4.0
+ * date: 2020-08-26T08:57:12.883Z
  * license: MIT
  */
 
-(function() {
+(function () {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@feizheng/next-js-core2');
   var nxDeepClone = nx.deepClone || require('@feizheng/next-deep-clone');
   var nxTraverse = nx.traverse || require('@feizheng/next-traverse');
-  var nxDeepEach = nx.deepEach || require('@feizheng/next-deep-each');
   var DEFAULT_OPTIONS = { itemsKey: 'children', clone: true };
 
   var NxTree = nx.declare('nx.Tree', {
     statics: {
-      serialize: function(inData) {
+      serialize: function (inData) {
         return JSON.parse(JSON.stringify(inData));
+      },
+      create: function (inData, inOptions) {
+        return new this(inData, inOptions);
       }
     },
     methods: {
-      init: function(inData, inOptions) {
+      init: function (inData, inOptions) {
         this.options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
         this.data = this.options.clone ? nxDeepClone(inData) : inData;
         this.attach();
-        this.meta();
       },
-      meta: function() {
-        var max = 0;
-        var x = 0;
-        nxDeepEach(this.data, function(_, item) {
-          if (typeof item === 'object') {
-            if (!Array.isArray(item)) {
-              if (item.depth >= max) {
-                max = item.depth;
-              }
-            }
-            item.independent && x++;
-          }
-        });
-        this.meta = { depth: max, x: x, y: max && max + 1 };
-      },
-      table: function() {
-        var self = this;
-        var groups = { length: this.meta.depth + 1 };
-
-        nxDeepEach(this.data, function(key, value) {
-          if (value && typeof value === 'object') {
-            if (typeof value.depth === 'number') {
-              groups[value.depth] = groups[value.depth] || [];
-              groups[value.depth].push(value);
-            }
-          }
-        });
-
-        groups = nx.slice(groups);
-
-        nx.forEach(groups, function(row, depth) {
-          nx.forEach(row, function(cell) {
-            var current = new NxTree(cell);
-            cell.colSpan = current.meta.x;
-            cell.rowSpan = cell.independent ? self.meta.y - depth : 0;
-          });
-        });
-
-        return groups;
-      },
-      attach: function() {
+      attach: function () {
         var options = this.options;
         nxTraverse(
           this.data,
-          function(key, item, target) {
-            item.__parent__ = function() {
+          function (_, item, target) {
+            item.__parent__ = function () {
               return target;
             };
-            item.__children__ = function() {
+            item.__children__ = function () {
               return item[options.itemsKey] || [];
             };
           },
           options
         );
       },
-      traverse: function(inCallback) {
+      traverse: function (inCallback) {
         nxTraverse(this.data, inCallback, this.options);
       },
-      find: function(inCallback) {
+      find: function (inCallback) {
         var result = null;
         nxTraverse(
           this.data,
-          function(index, item, parent) {
-            if (inCallback(index, item, parent)) {
+          function (_, item) {
+            if (inCallback.apply(null, arguments)) {
               result = item;
               return nx.BREAKER;
             }
@@ -99,11 +61,11 @@
         );
         return result;
       },
-      search: function(inCallback) {
+      search: function (inCallback) {
         var options = this.options;
         var data = nxDeepClone(this.data);
-        var filter = function(list, callback) {
-          return list.filter(function(item, index) {
+        var filter = function (list, callback) {
+          return list.filter(function (item, index) {
             var children = item[options.itemsKey];
             if (children && children.length) {
               children = item[options.itemsKey] = filter(children, callback);
@@ -116,12 +78,12 @@
         };
         return filter(data, inCallback);
       },
-      filter: function(inCallback) {
+      filter: function (inCallback) {
         var result = [];
         nxTraverse(
           this.data,
-          function(index, item, parent) {
-            if (inCallback(index, item, parent)) {
+          function (_, item) {
+            if (inCallback.apply(null, arguments)) {
               result.push(item);
             }
           },
@@ -129,7 +91,7 @@
         );
         return result;
       },
-      ancestors: function(inCallback) {
+      ancestors: function (inCallback) {
         var results = [];
         var current = this.find(inCallback);
         if (current) {
@@ -141,13 +103,13 @@
         }
         return results;
       },
-      descendants: function(inCallback) {
+      descendants: function (inCallback) {
         var current = this.find(inCallback);
         var results = [];
         if (current) {
           nxTraverse(
             current,
-            function(_, item) {
+            function (_, item) {
               results = results.concat(item.__children__());
             },
             this.options
@@ -155,11 +117,11 @@
         }
         return results;
       },
-      parent: function(inCallback) {
+      parent: function (inCallback) {
         var current = this.find(inCallback);
         return current && current.__parent__();
       },
-      children: function(inCallback) {
+      children: function (inCallback) {
         var current = this.find(inCallback);
         return current && current.__children__();
       }
@@ -170,5 +132,3 @@
     module.exports = NxTree;
   }
 })();
-
-//# sourceMappingURL=next-tree.js.map
