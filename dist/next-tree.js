@@ -2,8 +2,8 @@
  * name: @feizheng/next-tree
  * description: Tree data for next.
  * homepage: https://github.com/afeiship/next-tree
- * version: 1.4.0
- * date: 2020-08-26T08:57:12.883Z
+ * version: 1.4.1
+ * date: 2020-08-26T08:59:56.007Z
  * license: MIT
  */
 

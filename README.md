@@ -12,15 +12,59 @@ npm install -S @feizheng/next-tree
 ```
 
 ## apis
-| api | params | description   |
-|-----|--------|---------------|
-| get | -      | desc balabala |
+| api         | params   | description                 |
+| ----------- | -------- | --------------------------- |
+| children    | callback | Find children only on level |
+| parent      | callback | Find parent only one level  |
+| descendants | callback | Find descendants recursion  |
+| ancestors   | callback | Find ancestors recursion    |
+| find        | callback | -                           |
+| filter      | callback | -                           |
+| search      | callback | -                           |
+| table       | callback | Create table data           |
+
 
 ## usage
 ```js
 import NxTree from '@feizheng/next-tree';
 
-// code goes here:
+const treeData = {
+  label: '空间',
+  value: '/admin/space',
+  children: [
+    {
+      label: '空间-子级1',
+      value: '/admin/space/:id',
+      children: [
+        {
+          label: '空间导出',
+          value: '/admin/space/:id/export'
+        }
+      ]
+    },
+    {
+      label: '空间-子级2',
+      value: '/admin/space2/:id',
+      children: [
+        {
+          label: '空间导出222',
+          value: '/admin/space/:id/expor2222t'
+        }
+      ]
+    }
+  ]
+};
+
+const item = NxTree.create(treeData).find((_, item) => item.label === '空间导出222');
+const data = NxTree.serialize(item);
+
+// results:
+{
+  label: '空间导出222',
+  value: '/admin/space/:id/expor2222t',
+  depth: 2,
+  independent: true
+}
 ```
 
 ## license
