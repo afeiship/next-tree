@@ -38,5 +38,12 @@
   "dependencies": {
     "@jswork/next-deep-clone": "^1.0.0",
     "@jswork/next-traverse": "^1.0.1"
-  }
+  },
+  "keywords": [
+    "next",
+    "tree",
+    "tree-view",
+    "descendants",
+    "ancestors"
+  ]
 }
