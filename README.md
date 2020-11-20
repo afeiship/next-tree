@@ -8,7 +8,7 @@
 
 ## installation
 ```bash
-npm install -S @feizheng/next-tree
+npm install -S @jswork/next-tree
 ```
 
 ## apis
@@ -26,7 +26,7 @@ npm install -S @feizheng/next-tree
 
 ## usage
 ```js
-import NxTree from '@feizheng/next-tree';
+import NxTree from '@jswork/next-tree';
 
 const treeData = {
   label: '空间',
@@ -67,17 +67,18 @@ const data = NxTree.serialize(item);
 }
 ```
 
+
 ## license
 Code released under [the MIT license](https://github.com/afeiship/next-tree/blob/master/LICENSE.txt).
 
-[version-image]: https://img.shields.io/npm/v/@feizheng/next-tree
-[version-url]: https://npmjs.org/package/@feizheng/next-tree
+[version-image]: https://img.shields.io/npm/v/@jswork/next-tree
+[version-url]: https://npmjs.org/package/@jswork/next-tree
 
-[license-image]: https://img.shields.io/npm/l/@feizheng/next-tree
+[license-image]: https://img.shields.io/npm/l/@jswork/next-tree
 [license-url]: https://github.com/afeiship/next-tree/blob/master/LICENSE.txt
 
-[size-image]: https://img.shields.io/bundlephobia/minzip/@feizheng/next-tree
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/next-tree
 [size-url]: https://github.com/afeiship/next-tree/blob/master/dist/next-tree.min.js
 
-[download-image]: https://img.shields.io/npm/dm/@feizheng/next-tree
-[download-url]: https://www.npmjs.com/package/@feizheng/next-tree
+[download-image]: https://img.shields.io/npm/dm/@jswork/next-tree
+[download-url]: https://www.npmjs.com/package/@jswork/next-tree

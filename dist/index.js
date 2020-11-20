@@ -1,17 +1,17 @@
 /*!
- * name: @feizheng/next-tree
+ * name: @jswork/next-tree
  * description: Tree data for next.
  * homepage: https://github.com/afeiship/next-tree
- * version: 1.4.0
- * date: 2020-08-26T09:00:31.094Z
+ * version: 1.0.0
+ * date: 2020-11-20 13:49:49
  * license: MIT
  */
 
-(function () {
+(function() {
   var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('@feizheng/next-js-core2');
-  var nxDeepClone = nx.deepClone || require('@feizheng/next-deep-clone');
-  var nxTraverse = nx.traverse || require('@feizheng/next-traverse');
+  var nx = global.nx || require('@jswork/next');
+  var nxDeepClone = nx.deepClone || require('@jswork/next-deep-clone');
+  var nxTraverse = nx.traverse || require('@jswork/next-traverse');
   var DEFAULT_OPTIONS = { itemsKey: 'children', clone: true };
 
   var NxTree = nx.declare('nx.Tree', {

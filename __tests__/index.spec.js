@@ -1,10 +1,10 @@
 (function () {
-  var nx = require('@feizheng/next-js-core2');
-  var NxTree = require('../src/next-tree');
+  const NxTree = require('../src');
 
   describe('NxTree.methods', function () {
     var menus = [];
     var columns = [];
+
     beforeEach(() => {
       menus = require('./menu.json');
       columns = require('./columns.json');
@@ -64,7 +64,7 @@
     });
 
     test('method - search/serialize: level1/n', function () {
-      var nxTree = new NxTree(menus);
+      var nxTree = new NxTree(menus, { inject: true });
       var res1 = nxTree.search((index, item) => item.label === '数据');
       var res2 = nxTree.search((index, item) => item.label === '团队');
       var res3 = nxTree.search((index, item) => item.label === '团体');
@@ -127,7 +127,9 @@
         ]
       };
 
-      var item = nx.Tree.create(treeData).find((_, item) => item.label === '空间导出222');
+      var item = nx.Tree.create(treeData, { inject: true }).find(
+        (_, item) => item.label === '空间导出222'
+      );
 
       expect(nx.Tree.serialize(item)).toEqual({
         label: '空间导出222',

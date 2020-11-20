@@ -1,8 +1,8 @@
-(function () {
+(function() {
   var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('@feizheng/next-js-core2');
-  var nxDeepClone = nx.deepClone || require('@feizheng/next-deep-clone');
-  var nxTraverse = nx.traverse || require('@feizheng/next-traverse');
+  var nx = global.nx || require('@jswork/next');
+  var nxDeepClone = nx.deepClone || require('@jswork/next-deep-clone');
+  var nxTraverse = nx.traverse || require('@jswork/next-traverse');
   var DEFAULT_OPTIONS = { itemsKey: 'children', clone: true };
 
   var NxTree = nx.declare('nx.Tree', {
