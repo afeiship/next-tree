@@ -1,9 +1,9 @@
-(function() {
+(function () {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@jswork/next');
   var nxDeepClone = nx.deepClone || require('@jswork/next-deep-clone');
   var nxTraverse = nx.traverse || require('@jswork/next-traverse');
-  var DEFAULT_OPTIONS = { itemsKey: 'children', clone: true };
+  var DEFAULT_OPTIONS = { itemsKey: 'children', idKey: 'value', clone: true };
 
   var NxTree = nx.declare('nx.Tree', {
     statics: {
@@ -37,6 +37,19 @@
       },
       traverse: function (inCallback) {
         nxTraverse(this.data, inCallback, this.options);
+      },
+      value: function () {
+        var result = [];
+        var self = this;
+        nxTraverse(
+          this.data,
+          function (_, item) {
+            var id = nx.get(item, self.options.idKey);
+            result.push(id);
+          },
+          this.options
+        );
+        return result;
       },
       find: function (inCallback) {
         var result = null;

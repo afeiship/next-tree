@@ -138,5 +138,28 @@
         independent: true
       });
     });
+
+    test('api: value should get all the values', () => {
+      var ids = nx.Tree.create(columns, { idKey: 'key' }).value();
+      expect(ids).toEqual([
+        'name',
+        undefined,
+        'age',
+        undefined,
+        'street',
+        undefined,
+        'building',
+        undefined,
+        undefined,
+        undefined,
+        'number',
+        undefined,
+        undefined,
+        undefined,
+        'companyAddress',
+        'companyName',
+        'gender'
+      ]);
+    });
   });
 })();
